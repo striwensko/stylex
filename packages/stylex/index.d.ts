@@ -34,7 +34,7 @@ export type CompiledStyles<Type extends CssStyles> = {
 export = stylex;
 export as namespace stylex;
 
-declare function stylex<T>(...style: (CompiledStyles<T> | (null | CompiledStyles<T>)[])[]): string;
+declare function stylex(...style: ( Opaque<"Styles", {[key : string]:any}> | (null | Opaque<"Styles", {[key : string]:any}>)[])[]): string;
 
 
 declare namespace stylex {
@@ -49,4 +49,3 @@ declare namespace stylex {
 
   function inject(cssString: string): void;
 }
-
